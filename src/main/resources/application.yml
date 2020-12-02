@@ -9,7 +9,7 @@ spring:
       initialSize: 5
       maxActive: 20
       minIdle: 5
-      maxIdle: 15
+#      maxIdle: 15
       defaultAutoCommit: true
       maxWait: 10000
       removeAbandoned: true

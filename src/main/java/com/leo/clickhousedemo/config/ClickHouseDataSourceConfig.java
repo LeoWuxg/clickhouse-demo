@@ -18,7 +18,7 @@ public class ClickHouseDataSourceConfig {
     private Integer initialSize;
     private Integer maxActive;
     private Integer minIdle;
-    private Integer maxIdle;
+//    private Integer maxIdle;
     private Integer maxWait;
     private boolean defaultAutoCommit;
     private boolean removeAbandoned;
@@ -90,13 +90,13 @@ public class ClickHouseDataSourceConfig {
         this.minIdle = minIdle;
     }
 
-    public Integer getMaxIdle() {
-        return maxIdle;
-    }
-
-    public void setMaxIdle(Integer maxIdle) {
-        this.maxIdle = maxIdle;
-    }
+//    public Integer getMaxIdle() {
+//        return maxIdle;
+//    }
+//
+//    public void setMaxIdle(Integer maxIdle) {
+//        this.maxIdle = maxIdle;
+//    }
 
     public Integer getMaxWait() {
         return maxWait;
