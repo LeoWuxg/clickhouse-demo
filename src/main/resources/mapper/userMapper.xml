@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leo.clickhousedemo.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.leo.clickhousedemo.entity.User">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name
+    </sql>
+
+    <select id="getUserById" resultType="com.leo.clickhousedemo.entity.User" parameterType="java.util.List">
+        select
+            <include refid="Base_Column_List"/>
+        from test.user
+        <where>
+            id in
+            <foreach collection="list" item="id" index="index" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="countTotalRows" resultType="java.lang.Long">
+        SELECT  sum(rows) AS totalRows FROM system.parts
+    </select>
+</mapper>

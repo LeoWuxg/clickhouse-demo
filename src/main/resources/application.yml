@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    clickhouse:
+      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+      url: jdbc:clickhouse://clickhouse-order01.beta1.fn:8123/test
+      username: order_developer
+      password: OrderWiM8x
+      initialSize: 5
+      maxActive: 20
+      minIdle: 5
+      maxIdle: 15
+      defaultAutoCommit: true
+      maxWait: 10000
+      removeAbandoned: true
+      removeAbandonedTimeout: 60
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 5000
+      validationInterval: 60000
+      numTestsPerEvictionRun: 3
+      minEvictableIdleTimeMillis: 60000
+      validationQuery: select 1
+      logAbandoned: false
+      fairQueue: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
